@@ -6,7 +6,18 @@
     </head>
     <body>
         <script>
-            
+            let choices = ['rock', 'paper', 'scissors'];
+            let randomChoice = Math.floor(Math.random() * choices.length);
+            let compChoice = choices[randomChoice];
+            function oneRound() {
+                let randomChoice = Math.floor(Math.random() * choices.length);
+                let compChoice = choices[randomChoice];
+                let ask = prompt("rock, paper, or scissors?");
+                let userChoice = ask.toLowerCase()
+                
+               
+            } 
+            oneRound();
         </script>
     </body>
 </html>
