@@ -7,23 +7,38 @@
     <body>
         <script>
             let choices = ['rock', 'paper', 'scissors'];
-            let randomChoice = Math.floor(Math.random() * choices.length);
-            let compChoice = choices[randomChoice];
-            function oneRound() {
+            let compScore = 0
+            let userScore = 0
+            function playRound() {
+                let compWon = false
+                let userWon = false
                 let randomChoice = Math.floor(Math.random() * choices.length);
                 let compChoice = choices[randomChoice];
-                let ask = prompt("rock, paper, or scissors?");
+                let ask = prompt(`rock, paper, or scissors? ${compChoice}`);
                 let userChoice = ask.toLowerCase();
                 if (userChoice === compChoice) {
                     alert("Oh! It's a draw!");
-                } else if (userChoice === 'rock' && compChoice === 'paper' || userChoice === 'paper' && compChoice === 'scissors') {
-                    alert("The computer chose ${compChoice}!, you lost");
-                } else if (userChoice === 'paper' && compChoice === 'rock' || userChoice ==='scissors' && compChoice === 'paper') {
+                
+                } else if ((userChoice === 'rock' && compChoice === 'paper') || (userChoice === 'paper' && compChoice === 'scissors') || (userChoice === 'scissors' && compChoice === 'rock')) {
+                    compScore = compScore + 1
+                    alert(`The computer chose ${compChoice}! you lost ${compScore} ${userScore}`);
+                
+                }  else if ((userChoice === 'paper' && compChoice === 'rock') || (userChoice ==='scissors' && compChoice === 'paper') || (userChoice === 'rock' && compChoice === 'scissors')) {
                     alert("You win!")
                 }
-               
             } 
-            oneRound();
+            function game() {
+                for (let i = 0; i < 5; i++) {
+                    playRound();
+            }
+    
+    }
+            game();
+            if (userScore > compScore) {
+                    alert(`You scored ${userScore}. The computer scored ${compScore}. You won!`)
+                } else {
+                    alert(`You scored ${userScore}. The computer scored ${compScore}. You won!`)
+                }
         </script>
     </body>
 </html>
