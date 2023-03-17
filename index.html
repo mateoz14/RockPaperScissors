@@ -13,8 +13,14 @@
                 let randomChoice = Math.floor(Math.random() * choices.length);
                 let compChoice = choices[randomChoice];
                 let ask = prompt("rock, paper, or scissors?");
-                let userChoice = ask.toLowerCase()
-                
+                let userChoice = ask.toLowerCase();
+                if (userChoice === compChoice) {
+                    alert("Oh! It's a draw!");
+                } else if (userChoice === 'rock' && compChoice === 'paper' || userChoice === 'paper' && compChoice === 'scissors') {
+                    alert("The computer chose ${compChoice}!, you lost");
+                } else if (userChoice === 'paper' && compChoice === 'rock' || userChoice ==='scissors' && compChoice === 'paper') {
+                    alert("You win!")
+                }
                
             } 
             oneRound();
