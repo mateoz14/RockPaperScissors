@@ -1,0 +1,69 @@
+* {
+    background-color: yellow;
+}
+.ui {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+img {
+    max-height: 194px;
+    max-width: 259px;
+    border: solid lightskyblue 3px;
+    flex-shrink: 0;
+}
+.images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#rock, #paper, #scissors {
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: 75px;
+    margin-top: 20px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    height: 200px;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+#header {
+    margin-bottom: 25px;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.user-score, .cpu-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

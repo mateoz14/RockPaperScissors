@@ -3,42 +3,41 @@
     <head>
         <meta charset="UTF-16">
         <title>rockpaperscissors</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <script>
-            let choices = ['rock', 'paper', 'scissors'];
-            let compScore = 0
-            let userScore = 0
-            function playRound() {
-                let compWon = false
-                let userWon = false
-                let randomChoice = Math.floor(Math.random() * choices.length);
-                let compChoice = choices[randomChoice];
-                let ask = prompt(`rock, paper, or scissors? ${compChoice}`);
-                let userChoice = ask.toLowerCase();
-                if (userChoice === compChoice) {
-                    alert("Oh! It's a draw!");
-                
-                } else if ((userChoice === 'rock' && compChoice === 'paper') || (userChoice === 'paper' && compChoice === 'scissors') || (userChoice === 'scissors' && compChoice === 'rock')) {
-                    compScore = compScore + 1
-                    alert(`The computer chose ${compChoice}! you lost ${compScore} ${userScore}`);
-                
-                }  else if ((userChoice === 'paper' && compChoice === 'rock') || (userChoice ==='scissors' && compChoice === 'paper') || (userChoice === 'rock' && compChoice === 'scissors')) {
-                    alert("You win!")
-                }
-            } 
-            function game() {
-                for (let i = 0; i < 5; i++) {
-                    playRound();
-            }
-    
-    }
-            game();
-            if (userScore > compScore) {
-                    alert(`You scored ${userScore}. The computer scored ${compScore}. You won!`)
-                } else {
-                    alert(`You scored ${userScore}. The computer scored ${compScore}. You won!`)
-                }
-        </script>
+        <div class="UI">
+            <div class="box">
+                <div id="header">Welcome to rock paper scissors</div>
+                <div class="score">
+                    <div class="score1">
+                        <div id="user">You</div>
+                        <div id="playerscore">0</div>
+                    </div>
+                    <div class="vs">VS.</div>
+                    <div class="score2">
+                        <div id="cpu">CPU</div>
+                        <div id="cpuscore">0</div>
+                    </div>
+                </div>
+                <div class="first-to-wins">First to 5 wins</div>
+            </div>
+            <div class="commentator">Now what'll it be fella??</div>
+            <div class="images">
+                <div class="item">
+                    <img src="rock.png">
+                    <button id="rock">ROCK</button>
+                </div>
+                <div class="item">
+                    <img src="paper.png">
+                    <button id="paper">PAPER</button>
+                </div>
+                <div class="item">
+                    <img src="scissors.png">
+                    <button id="scissors">SCISSORS</button>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
